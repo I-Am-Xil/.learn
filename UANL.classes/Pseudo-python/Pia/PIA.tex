@@ -1,0 +1,178 @@
+\documentclass[]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[spanish]{babel}
+\usepackage{amsmath}
+\usepackage{geometry}
+\usepackage{multicol}
+\usepackage{amssymb}
+
+\geometry{a4paper,left=3cm,right=3cm,top=3cm,bottom=3cm}
+
+%opening
+\title{Deducción de la solución para un péndulo simple y el desarrollo de su aproximación numérica}
+\author{Logan Alejandro Martinez Paredes 1911562}
+\date{}
+
+\begin{document}
+	
+	\maketitle
+		
+	\begin{abstract}
+		Se encuentra una expresión con la que podremos aproximar la solución numérica del péndulo simple dados los valores de la gravedad, longitud de la cuerda, fase inicial y el numero de iteraciones en el código desarrollado en Python(3.8.5).
+	\end{abstract}
+
+	\section{Ecuación del movimiento}
+	
+	Empezamos considerando un péndulo simple. Si desplazamos una partícula desde la posición de equilibrio hasta que el hilo forme un angulo $\theta$ con la vertical, luego la abandonamos partiendo del reposo, el péndulo oscilará en un plano vertical bajo la acción de la gravedad. Las oscilaciones tendrán lugar entre las posiciones extremas [$\theta$,$-\theta$], a lo largo de un arco de circunferencia cuyo radio es la longitud $\ell$ del hilo.
+	
+	Para determinar la naturaleza de las oscilaciones deberemos escribir la ecuación del movimiento de la partícula. Esta se mueve sobre un arco de circunferencia bajo la acción de dos fuerzas: su propio peso (mg) y la tensión del hilo (N), siendo la fuerza motriz la componente tangencial del peso. Aplicando la segunda ley de Newton obtenemos:
+	
+	\begin{equation}
+		F_t = ma_t = -mg\sin(\theta)
+	\end{equation}
+
+	Al tratarse de un movimiento circular podemos concluir que
+	
+	\begin{equation}
+		a_t = \ell\ddot{\theta}
+	\end{equation}
+	
+	Siendo $\ddot{\theta}$ la aceleración angular, de modo que al ecuación diferencial del movimiento es
+	
+	\begin{equation}
+		-mg\sin(\theta) = m\ell\ddot{\theta} \rightarrow \ddot{\theta}+\frac{g}{\ell}\sin(\theta) = 0
+	\end{equation}
+
+	De modo que la masa no interviene en el movimiento de un péndulo. A partir de aquí, ya que $\theta$ es siempre dependiente del tiempo, podemos
+	
+	\begin{equation}
+		\dot{\theta}\ddot{\theta}+\frac{g}{\ell}\sin(\theta)\dot{\theta} = 0 \rightarrow D_t\left[\frac{\dot{\theta}^2}{2}-\frac{g}{\ell}\cos(\theta)\right] = 0 \rightarrow \dot{\theta}^2-2\frac{g}{\ell}\cos(\theta) = c
+	\end{equation}
+
+	Definamos una constante $r = 2\frac{g}{\ell}$ y a $\theta(0) = \theta_0$, evaluando esto en (4), terminamos con lo siguiente
+	
+	\begin{equation}
+		-r\cos(\theta_0) = c
+	\end{equation}
+
+	Una vez definidas nuestras condiciones iniciales, podemos deducir que
+	
+	\begin{equation}
+		\dot{\theta}^2 = r\left[\cos(\theta) -\cos(\theta_0)\right]
+	\end{equation}
+
+	Ahora definiremos la formula de doble angulo
+	
+	\begin{equation}
+		\cos(\theta) = \cos\left(2\frac{\theta}{2}\right) = 1-2\sin^2\left(\frac{\theta}{2}\right)
+	\end{equation}
+
+	Con esto y permitiendo a $2r = R$ podemos reescribir (6) de la siguiente forma
+	
+	\begin{equation}
+		\dot{\theta}^2 = R\left[\sin^2\left(\frac{\theta_0}{2}\right)-\sin^2\left(\frac{\theta}{2}\right)\right]
+	\end{equation}
+
+	Ahora definimos una constante $k = \sin\left(\frac{\theta_0}{2}\right)$, obtenemos la raíz cuadrada de (8), despejamos $\sqrt{R}$ e integramos respecto a $t$ en el dominio [0,$\theta_0$]
+	
+	\begin{equation}
+		\int^{\theta_0}_{0}\frac{\dot{\theta}}{\sqrt{k^2-\sin^2\left(\frac{\theta}{2}\right)}}dt = \int^{\theta_0}_{0}\sqrt{R}dt
+	\end{equation}
+
+	Separando $\theta$ en $\frac{d\theta}{dt}$ y cancelando diferenciales
+	
+	\begin{equation}
+		\int^{\theta_0}_{0}\frac{d\theta}{\sqrt{k^2-\sin^2\left(\frac{\theta}{2}\right)}} = \int^{\theta_0}_{0}\sqrt{R}dt
+	\end{equation}
+
+	Ahora hacemos cambio de variable donde $\sin(\frac{\theta}{2}) = k\sin(\upsilon)$ y $\frac{1}{2}\cos(\frac{\theta}{2})d\theta = k\cos(\upsilon)d\upsilon$
+	
+	\begin{equation}
+		\int^{\pi/2}_{0}\frac{2d\upsilon\cos(\upsilon)}{k\cos(\frac{\theta}{2})\sqrt{1-\sin^2\left(\upsilon\right)}} = 2\int^{\pi/2}_{0}\frac{d\upsilon}{\sqrt{1-k^2\sin^2(\upsilon)}} = \sqrt{R}\int^{\theta_0}_{0}dt
+	\end{equation}
+	
+	Donde $\int^{\theta_0}_{0}dt = \frac{T}{4}$, al despejar el periodo tenemos
+	
+	\begin{equation}
+		T = \frac{8}{\sqrt{R}}\int^{\pi/2}_{0}\frac{d\upsilon}{\sqrt{1-k^2\sin^2(\upsilon)}} = 4\sqrt{\frac{\ell}{g}}K(k)
+	\end{equation}
+
+	Siendo $K(k)$ la integral elíptica completa de primera especie la cual resolveremos en la siguiente sección
+	
+	\section{Integral elíptica completa de primera especie}
+	
+	En la sección anterior nos encontramos con esta función la cual se define como
+	
+	\begin{equation}
+		K(k) = \int^{\pi/2}_{0}\frac{d\upsilon}{\sqrt{1-k^2\sin^2(\upsilon)}}
+	\end{equation} 
+
+	Pero primero echemos un vistazo al integrando, esta función, la podemos reescribir con la forma $(1-x)^{-1/2}$, donde si todo esta en el radio de convergencia, podemos poner $k^2\sin^2(\upsilon)$, lo que nos permite convertirla en una serie Taylor\\
+
+	\begin{center}
+		\begin{tabular}{l}
+			$\mathcal{J}(x) = (1-x)^{-1/2}$\\[4pt]
+			$\mathcal{J}'(x) = \frac{1}{2}(1-x)^{-3/2}$\\[4pt]
+			$\mathcal{J}'(x) = \frac{1*3}{2*2}(1-x)^{-5/2}$\\[4pt]
+			$\mathcal{J}''(x) = \frac{1*3*5}{2*2*2}(1-x)^{-7/2}$\\
+			...\\
+			$\mathcal{J}^n(x) = \frac{(2n-1)!!}{2^n}(1-x)^{-\frac{2n+1}{2}}$
+		\end{tabular}
+	\end{center}
+
+	Lo que nos deja con
+	
+	\begin{equation}
+		\mathcal{J}(x) = \sum_{n \geq 0}^{\infty} \frac{(2n-1)!!}{n!2^n}x^n
+	\end{equation}
+
+	Por lo que podemos reescribir (13) de la siguiente forma
+	
+	\begin{equation}
+		K(k) = \int_{0}^{\pi/2}\sum_{n \geq 0}^{\infty} \frac{(2n-1)!!}{n!2^n}k^{2n}\sin^{2n}(\upsilon)d\upsilon
+	\end{equation}
+
+	Donde por el teorema de convergencia monótona, podemos intercambiar la integral y el sumatorio, así como sacar las constantes, por lo que terminamos con la siguiente expresión
+	
+	\begin{equation}
+		K(k) = \sum_{n \geq 0}^{\infty} \frac{(2n-1)!!}{n!2^n}k^{2n}\int_{0}^{\pi/2}\sin^{2n}(\upsilon)d\upsilon
+	\end{equation}
+
+	Ahora definiremos a la función beta
+	
+	\begin{equation}
+		\beta(x,y)/2 = \frac{\Gamma(x)\Gamma(y)}{2\Gamma(x+y)} = \int_{0}^{\pi/2}\sin^{2x-1}(t)\cos^{2x-1}(t)dt
+	\end{equation}
+
+	gracias a esta función (En la cual no profundizaremos mucho mas), podemos hacer lo siguiente
+	
+	\begin{equation*}
+		K(k) = \sum_{n \geq 0}^{\infty} \frac{(2n-1)!!}{n!2^n}k^{2n}\int_{0}^{\pi/2}\sin^{2n}(\upsilon)\cos^0(\upsilon)d\upsilon = \sum_{n \geq 0}^{\infty} \frac{(2n-1)!!}{n!2^n}k^{2n}\frac{\pi}{2}\Gamma\left(\frac{2n+1}{2}\right)
+	\end{equation*}
+
+	\begin{equation}
+		 = \sum_{n \geq 0}^{\infty} \frac{(2n-1)!!}{n!2^n}k^{2n}\frac{\pi}{2}\frac{(2n-1)!!}{2^n} = \frac{\pi}{2}\sum_{n \geq 0}^{\infty} \left[\frac{(2n-1)!!}{n!2^n}k^{n}\right]^2
+	\end{equation}
+
+	Donde podemos simplemente reescribir
+	
+	\begin{equation*}
+		2^nn! = n!!
+	\end{equation*}
+
+	Lo que al final nos deja con que
+	
+	\begin{equation}
+		K(k) = \frac{\pi}{2}\sum_{n \geq 0}^{\infty} \left[\frac{(2n-1)!!}{(2n)!!}k^n\right]^2
+	\end{equation}
+
+	\section{Computación del periodo}
+	
+	Con los resultados adquiridos en las 2 secciones anteriores, podemos concluir que
+	
+	\begin{equation}
+		T = 2\pi\sqrt{\frac{\ell}{g}}\sum_{n \geq 0}^{\infty} \left[\frac{(2n-1)!!}{(2n)!!}\sin^n\left(\frac{\theta_0}{2}\right)\right]^2
+	\end{equation}
+	
+	En el código desarrollado para la solución numérica de este problema, utilizamos una función llamada \textbf{\textit{legedre}}, esta es la encargada de calcular a $K(k)$. Para el sistema I/O del programa, se utilizó el control de flujo necesario para asegurar que el usuario solo pueda ingresar valores validos, evitando así lo mas posible errores respecto al tipo de dato. En este programa solo se necesitó una librería llamada \textbf{math}, la cual incluye un valor aproximado de la contaste irracional $\pi$
+\end{document}

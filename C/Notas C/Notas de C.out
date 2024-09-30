@@ -1,0 +1,163 @@
+\BOOKMARK [1][-]{section.1}{Introducci\363n}{}% 1
+\BOOKMARK [2][-]{subsection.1.1}{\277Que es C?}{section.1}% 2
+\BOOKMARK [2][-]{subsection.1.2}{Historia de C}{section.1}% 3
+\BOOKMARK [2][-]{subsection.1.3}{Caracteristicas destacables}{section.1}% 4
+\BOOKMARK [2][-]{subsection.1.4}{\277Que temas contendr\341 el curso?}{section.1}% 5
+\BOOKMARK [1][-]{section.2}{Instalaci\363n y configuracion de entorno}{}% 6
+\BOOKMARK [2][-]{subsection.2.1}{Configuracion}{section.2}% 7
+\BOOKMARK [1][-]{section.3}{Hola mundo}{}% 8
+\BOOKMARK [2][-]{subsection.3.1}{\043}{section.3}% 9
+\BOOKMARK [2][-]{subsection.3.2}{Caracter de escape}{section.3}% 10
+\BOOKMARK [2][-]{subsection.3.3}{Practica}{section.3}% 11
+\BOOKMARK [1][-]{section.4}{indef}{}% 12
+\BOOKMARK [2][-]{subsection.4.1}{Operadores}{section.4}% 13
+\BOOKMARK [3][-]{subsubsection.4.1.1}{Operadores Aritmeticos}{subsection.4.1}% 14
+\BOOKMARK [3][-]{subsubsection.4.1.2}{Operadores de igualdad}{subsection.4.1}% 15
+\BOOKMARK [3][-]{subsubsection.4.1.3}{Operadores de relacion}{subsection.4.1}% 16
+\BOOKMARK [2][-]{subsection.4.2}{Operador condicional}{section.4}% 17
+\BOOKMARK [2][-]{subsection.4.3}{Tipos de variable}{section.4}% 18
+\BOOKMARK [2][-]{subsection.4.4}{Variables}{section.4}% 19
+\BOOKMARK [2][-]{subsection.4.5}{Condicional}{section.4}% 20
+\BOOKMARK [1][-]{section.5}{El pre-procesador de C}{}% 21
+\BOOKMARK [2][-]{subsection.5.1}{Directivas del preprocesador}{section.5}% 22
+\BOOKMARK [2][-]{subsection.5.2}{\043define}{section.5}% 23
+\BOOKMARK [2][-]{subsection.5.3}{\043error}{section.5}% 24
+\BOOKMARK [2][-]{subsection.5.4}{\043include}{section.5}% 25
+\BOOKMARK [2][-]{subsection.5.5}{Directivas de compilacion condicional}{section.5}% 26
+\BOOKMARK [3][-]{subsubsection.5.5.1}{\043if, \043else, \043elif y \043endif}{subsection.5.5}% 27
+\BOOKMARK [3][-]{subsubsection.5.5.2}{\043ifdef y \043ifndef}{subsection.5.5}% 28
+\BOOKMARK [2][-]{subsection.5.6}{\043undef}{section.5}% 29
+\BOOKMARK [2][-]{subsection.5.7}{\043line}{section.5}% 30
+\BOOKMARK [2][-]{subsection.5.8}{\043pragma}{section.5}% 31
+\BOOKMARK [1][-]{section.6}{Palabras reservadas y conversion de tipos de dato}{}% 32
+\BOOKMARK [2][-]{subsection.6.1}{Palabras reservadas}{section.6}% 33
+\BOOKMARK [2][-]{subsection.6.2}{Conversion de tipos de dato}{section.6}% 34
+\BOOKMARK [1][-]{section.7}{Funciones I}{}% 35
+\BOOKMARK [2][-]{subsection.7.1}{Funci\363n con argumentos}{section.7}% 36
+\BOOKMARK [2][-]{subsection.7.2}{Funciones que retornan valores}{section.7}% 37
+\BOOKMARK [2][-]{subsection.7.3}{Forma general de una funcion}{section.7}% 38
+\BOOKMARK [1][-]{section.8}{Ciclos}{}% 39
+\BOOKMARK [2][-]{subsection.8.1}{Ciclo for}{section.8}% 40
+\BOOKMARK [2][-]{subsection.8.2}{Ciclo while}{section.8}% 41
+\BOOKMARK [2][-]{subsection.8.3}{Ciclo Do while}{section.8}% 42
+\BOOKMARK [1][-]{section.9}{Switch}{}% 43
+\BOOKMARK [2][-]{subsection.9.1}{Etiqueta case}{section.9}% 44
+\BOOKMARK [1][-]{section.10}{Arreglos}{}% 45
+\BOOKMARK [2][-]{subsection.10.1}{Arreglo unidimensional}{section.10}% 46
+\BOOKMARK [2][-]{subsection.10.2}{Strings}{section.10}% 47
+\BOOKMARK [2][-]{subsection.10.3}{Arreglo multidimensional}{section.10}% 48
+\BOOKMARK [1][-]{section.11}{Break y Continue}{}% 49
+\BOOKMARK [2][-]{subsection.11.1}{Break}{section.11}% 50
+\BOOKMARK [2][-]{subsection.11.2}{Continue}{section.11}% 51
+\BOOKMARK [1][-]{section.12}{Funciones II}{}% 52
+\BOOKMARK [2][-]{subsection.12.1}{Funciones b\341sicas}{section.12}% 53
+\BOOKMARK [2][-]{subsection.12.2}{funciones de retorno}{section.12}% 54
+\BOOKMARK [2][-]{subsection.12.3}{Funciones re-cursivas}{section.12}% 55
+\BOOKMARK [2][-]{subsection.12.4}{Forma general de una funci\363n}{section.12}% 56
+\BOOKMARK [2][-]{subsection.12.5}{Sentencia return}{section.12}% 57
+\BOOKMARK [3][-]{subsubsection.12.5.1}{Retornando desde una funci\363n}{subsection.12.5}% 58
+\BOOKMARK [3][-]{subsubsection.12.5.2}{Retornando un valor}{subsection.12.5}% 59
+\BOOKMARK [2][-]{subsection.12.6}{Funciones retornando valores no enteros}{section.12}% 60
+\BOOKMARK [3][-]{subsubsection.12.6.1}{Usando funciones prototipo}{subsection.12.6}% 61
+\BOOKMARK [3][-]{subsubsection.12.6.2}{Retornando punteros}{subsection.12.6}% 62
+\BOOKMARK [3][-]{subsubsection.12.6.3}{Funciones de tipo void}{subsection.12.6}% 63
+\BOOKMARK [2][-]{subsection.12.7}{Mas en prototipos}{section.12}% 64
+\BOOKMARK [3][-]{subsubsection.12.7.1}{Desajustes de argumento}{subsection.12.7}% 65
+\BOOKMARK [3][-]{subsubsection.12.7.2}{Archivos de cabecera }{subsection.12.7}% 66
+\BOOKMARK [3][-]{subsubsection.12.7.3}{Forma general prototipos de funci\363n}{subsection.12.7}% 67
+\BOOKMARK [2][-]{subsection.12.8}{Reglas de alcance}{section.12}% 68
+\BOOKMARK [3][-]{subsubsection.12.8.1}{Variables locales}{subsection.12.8}% 69
+\BOOKMARK [3][-]{subsubsection.12.8.2}{Par\341metros formales}{subsection.12.8}% 70
+\BOOKMARK [3][-]{subsubsection.12.8.3}{Variables globales}{subsection.12.8}% 71
+\BOOKMARK [2][-]{subsection.12.9}{Funciones, par\341metros y argumentos}{section.12}% 72
+\BOOKMARK [3][-]{subsubsection.12.9.1}{Llamada por valor, llamada por referencia}{subsection.12.9}% 73
+\BOOKMARK [3][-]{subsubsection.12.9.2}{Creando una llamada por referencia}{subsection.12.9}% 74
+\BOOKMARK [3][-]{subsubsection.12.9.3}{Llamado funciones con arreglos}{subsection.12.9}% 75
+\BOOKMARK [2][-]{subsection.12.10}{Argumentos de main}{section.12}% 76
+\BOOKMARK [2][-]{subsection.12.11}{Retornando valores desde main\(\)}{section.12}% 77
+\BOOKMARK [2][-]{subsection.12.12}{recursion}{section.12}% 78
+\BOOKMARK [2][-]{subsection.12.13}{problemas de implementaci\363n}{section.12}% 79
+\BOOKMARK [3][-]{subsubsection.12.13.1}{par\341metros y funciones de prop\363sito general}{subsection.12.13}% 80
+\BOOKMARK [2][-]{subsection.12.14}{Eficiencia}{section.12}% 81
+\BOOKMARK [1][-]{section.13}{Apuntadores}{}% 82
+\BOOKMARK [2][-]{subsection.13.1}{Conceptos b\341sicos}{section.13}% 83
+\BOOKMARK [3][-]{subsubsection.13.1.1}{Aritm\351tica de apuntadores}{subsection.13.1}% 84
+\BOOKMARK [2][-]{subsection.13.2}{Apuntadores y arreglos}{section.13}% 85
+\BOOKMARK [3][-]{subsubsection.13.2.1}{Arreglo de apuntadores}{subsection.13.2}% 86
+\BOOKMARK [2][-]{subsection.13.3}{Punteros a punteros}{section.13}% 87
+\BOOKMARK [2][-]{subsection.13.4}{Inicializar punteros}{section.13}% 88
+\BOOKMARK [2][-]{subsection.13.5}{Problemas con punteros}{section.13}% 89
+\BOOKMARK [2][-]{subsection.13.6}{Llamadas por referencia}{section.13}% 90
+\BOOKMARK [1][-]{section.14}{I/O y Archivos}{}% 91
+\BOOKMARK [2][-]{subsection.14.1}{Streams y archivos}{section.14}% 92
+\BOOKMARK [2][-]{subsection.14.2}{Streams}{section.14}% 93
+\BOOKMARK [3][-]{subsubsection.14.2.1}{Streams de texto}{subsection.14.2}% 94
+\BOOKMARK [3][-]{subsubsection.14.2.2}{Streams binarios}{subsection.14.2}% 95
+\BOOKMARK [3][-]{subsubsection.14.2.3}{Archivos}{subsection.14.2}% 96
+\BOOKMARK [2][-]{subsection.14.3}{Conceptual contra real}{section.14}% 97
+\BOOKMARK [2][-]{subsection.14.4}{Consola I/O}{section.14}% 98
+\BOOKMARK [3][-]{subsubsection.14.4.1}{Leyendo y escribiendo caracteres}{subsection.14.4}% 99
+\BOOKMARK [3][-]{subsubsection.14.4.2}{Leyendo y escribiendo cadenas}{subsection.14.4}% 100
+\BOOKMARK [2][-]{subsection.14.5}{Consola I/O formateada}{section.14}% 101
+\BOOKMARK [2][-]{subsection.14.6}{El sistema ANSI I/O}{section.14}% 102
+\BOOKMARK [3][-]{subsubsection.14.6.1}{El apuntador de archivo}{subsection.14.6}% 103
+\BOOKMARK [3][-]{subsubsection.14.6.2}{Abriendo un archivo}{subsection.14.6}% 104
+\BOOKMARK [3][-]{subsubsection.14.6.3}{Escribir un caracter}{subsection.14.6}% 105
+\BOOKMARK [3][-]{subsubsection.14.6.4}{Leyendo un caracter}{subsection.14.6}% 106
+\BOOKMARK [3][-]{subsubsection.14.6.5}{Usando feof\(\)}{subsection.14.6}% 107
+\BOOKMARK [3][-]{subsubsection.14.6.6}{Cerrando un archivo}{subsection.14.6}% 108
+\BOOKMARK [3][-]{subsubsection.14.6.7}{ferror\(\) y rewind\(\)}{subsection.14.6}% 109
+\BOOKMARK [3][-]{subsubsection.14.6.8}{Usando fopen\(\), getc\(\), putc\(\) y fclose\(\)}{subsection.14.6}% 110
+\BOOKMARK [3][-]{subsubsection.14.6.9}{Using get\(\) and putw\(\)}{subsection.14.6}% 111
+\BOOKMARK [3][-]{subsubsection.14.6.10}{fgets\(\) y fputs\(\)}{subsection.14.6}% 112
+\BOOKMARK [3][-]{subsubsection.14.6.11}{fread\(\) y fwrite\(\)}{subsection.14.6}% 113
+\BOOKMARK [3][-]{subsubsection.14.6.12}{fseek\(\) y acceso aleatorio I/O}{subsection.14.6}% 114
+\BOOKMARK [3][-]{subsubsection.14.6.13}{Los streams estandar}{subsection.14.6}% 115
+\BOOKMARK [3][-]{subsubsection.14.6.14}{fprintf\(\) y fscanf\(\)}{subsection.14.6}% 116
+\BOOKMARK [3][-]{subsubsection.14.6.15}{Borrando archivos}{subsection.14.6}% 117
+\BOOKMARK [2][-]{subsection.14.7}{Las Rutinas de archivo tipo UNIX}{section.14}% 118
+\BOOKMARK [1][-]{section.15}{Tipos de dato avanzados}{}% 119
+\BOOKMARK [2][-]{subsection.15.1}{Modificadores de acceso}{section.15}% 120
+\BOOKMARK [3][-]{subsubsection.15.1.1}{const}{subsection.15.1}% 121
+\BOOKMARK [3][-]{subsubsection.15.1.2}{volatile}{subsection.15.1}% 122
+\BOOKMARK [2][-]{subsection.15.2}{Especificadores de guardado de clase }{section.15}% 123
+\BOOKMARK [3][-]{subsubsection.15.2.1}{auto}{subsection.15.2}% 124
+\BOOKMARK [3][-]{subsubsection.15.2.2}{extern}{subsection.15.2}% 125
+\BOOKMARK [3][-]{subsubsection.15.2.3}{Variables static}{subsection.15.2}% 126
+\BOOKMARK [3][-]{subsubsection.15.2.4}{Variables locales static}{subsection.15.2}% 127
+\BOOKMARK [3][-]{subsubsection.15.2.5}{Variables globales static}{subsection.15.2}% 128
+\BOOKMARK [3][-]{subsubsection.15.2.6}{Variables register}{subsection.15.2}% 129
+\BOOKMARK [2][-]{subsection.15.3}{Punteros de funciones}{section.15}% 130
+\BOOKMARK [2][-]{subsection.15.4}{Asignaci\363n din\341mica de memoria}{section.15}% 131
+\BOOKMARK [2][-]{subsection.15.5}{Asignaci\363n y liberaci\363n de memoria}{section.15}% 132
+\BOOKMARK [1][-]{section.16}{Tipos definidos por el usuario}{}% 133
+\BOOKMARK [2][-]{subsection.16.1}{Structures}{section.16}% 134
+\BOOKMARK [3][-]{subsubsection.16.1.1}{Referenciando miembros de una estructura}{subsection.16.1}% 135
+\BOOKMARK [2][-]{subsection.16.2}{Arreglos de estructuras}{section.16}% 136
+\BOOKMARK [2][-]{subsection.16.3}{Assignando estructuras}{section.16}% 137
+\BOOKMARK [2][-]{subsection.16.4}{Pasar elementos de estructuras a funciones}{section.16}% 138
+\BOOKMARK [3][-]{subsubsection.16.4.1}{Pasando elementos de estructura a funciones}{subsection.16.4}% 139
+\BOOKMARK [3][-]{subsubsection.16.4.2}{Pasar estructuras enteras a funciones}{subsection.16.4}% 140
+\BOOKMARK [2][-]{subsection.16.5}{Punteros a estructuras}{section.16}% 141
+\BOOKMARK [3][-]{subsubsection.16.5.1}{Declarando un puntero de estructura}{subsection.16.5}% 142
+\BOOKMARK [3][-]{subsubsection.16.5.2}{Usando punteros de estructura}{subsection.16.5}% 143
+\BOOKMARK [2][-]{subsection.16.6}{Arreglos y estructuras en estructuras}{section.16}% 144
+\BOOKMARK [2][-]{subsection.16.7}{Bit-fields}{section.16}% 145
+\BOOKMARK [2][-]{subsection.16.8}{Uniones}{section.16}% 146
+\BOOKMARK [2][-]{subsection.16.9}{Enumeraciones}{section.16}% 147
+\BOOKMARK [2][-]{subsection.16.10}{Usando sizeof para asegurar portabilidad}{section.16}% 148
+\BOOKMARK [2][-]{subsection.16.11}{typedef}{section.16}% 149
+\BOOKMARK [1][-]{section.17}{Operadores avanzados}{}% 150
+\BOOKMARK [2][-]{subsection.17.1}{Operadores bitwise}{section.17}% 151
+\BOOKMARK [2][-]{subsection.17.2}{El operador ?}{section.17}% 152
+\BOOKMARK [2][-]{subsection.17.3}{Operador coma}{section.17}% 153
+\BOOKMARK [1][-]{section.18}{Funciones de control de pantalla}{}% 154
+\BOOKMARK [1][-]{section.19}{Estructuras}{}% 155
+\BOOKMARK [2][-]{subsection.19.1}{Arreglo de estructuras}{section.19}% 156
+\BOOKMARK [3][-]{subsubsection.19.1.1}{Operador punto}{subsection.19.1}% 157
+\BOOKMARK [2][-]{subsection.19.2}{Estructuras anidadas}{section.19}% 158
+\BOOKMARK [1][-]{section.20}{Asignaci\363n din\341mica de memoria II}{}% 159
+\BOOKMARK [2][-]{subsection.20.1}{Liberar memoria din\341mica}{section.20}% 160
+\BOOKMARK [2][-]{subsection.20.2}{`fgets' y `free'}{section.20}% 161
+\BOOKMARK [3][-]{subsubsection.20.2.1}{Operador}{subsection.20.2}% 162
+\BOOKMARK [1][-]{section.21}{Listas enlazadas}{}% 163

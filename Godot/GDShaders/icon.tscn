@@ -1,0 +1,59 @@
+[gd_scene load_steps=8 format=3 uid="uid://c3vxtcqxdlajb"]
+
+[ext_resource type="Shader" path="res://Shaders/Distorsion.gdshader" id="1_5fffo"]
+[ext_resource type="Texture2D" uid="uid://bwc23h1grtt20" path="res://icon.svg" id="1_awwxn"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_8bo1u"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_4356b"]
+shader = ExtResource("1_5fffo")
+shader_parameter/distortionTexture = SubResource("NoiseTexture2D_8bo1u")
+
+[sub_resource type="Animation" id="Animation_5khjm"]
+resource_name = "Flash"
+length = 0.4
+loop_mode = 1
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:material:shader_parameter/flashState")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [0.0, 1.0, 0.0]
+}
+
+[sub_resource type="Animation" id="Animation_c3pel"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:material:shader_parameter/flashState")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_l25ab"]
+_data = {
+"Flash": SubResource("Animation_5khjm"),
+"RESET": SubResource("Animation_c3pel")
+}
+
+[node name="Icon" type="Sprite2D"]
+material = SubResource("ShaderMaterial_4356b")
+position = Vector2(-4, -1)
+texture = ExtResource("1_awwxn")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_l25ab")
+}
