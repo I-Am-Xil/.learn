@@ -197,7 +197,6 @@ private:
         if (vkCreateInstance(&createInfo, nullptr, &instance) != VK_SUCCESS){
             throw std::runtime_error("failed to create instance!");
         }
-
     }
 
     //TECH: Pendejo aprendiendo C++ al mismo tiempo que Vulkan
@@ -285,7 +284,6 @@ private:
     }
 
 
-
     void pickPhysicalDevice(){
         uint32_t deviceCount = 0;
         vkEnumeratePhysicalDevices(instance, &deviceCount, nullptr);
@@ -307,7 +305,6 @@ private:
         if (physicalDevice == VK_NULL_HANDLE){
             throw std::runtime_error("failed to find a sutable GPU!");
         }
-
     }
 
     bool isDeviceSuitable(VkPhysicalDevice device){
@@ -329,7 +326,7 @@ private:
      * Basic surface capabilities (min/max number of images in swap chain,
      *      min/max width and height of images)
      * Surface formats (pixel format, color space)
-     * Available presentacion modes*/
+     * Available presentation modes*/
     SwapChainSupportDetails querySwapChainSupport(VkPhysicalDevice device){
         SwapChainSupportDetails details;
         vkGetPhysicalDeviceSurfaceCapabilitiesKHR(device, surface, &details.capabilities);
@@ -901,6 +898,8 @@ private:
             //remove the next line after that has been written
             //break;
         }
+
+        vkDeviceWaitIdle(device);
     }
 
 
