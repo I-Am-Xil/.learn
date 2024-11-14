@@ -4,3 +4,5 @@
 *.png
 *.spv
 *.pdf
+Manim/**/__pycache__/
+Manim/**/media/

@@ -1,4 +1,4 @@
-CFLAGS = -std=c++17 -O2
+CFLAGS = -std=c++17 -O2 -Wall -Wextra
 LDFLAGS = -lglfw -lvulkan
 DBFLAGS = -fsanitize=address,undefined --debug
 
